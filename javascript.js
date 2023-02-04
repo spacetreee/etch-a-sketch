@@ -6,6 +6,8 @@ const slider = document.querySelector('#myRange');
 let gridSize = slider.value;
 container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
 createGrid();
+const gridCells = document.querySelectorAll('.gridCell');
+addEvent(gridCells);
 
 slider.addEventListener('mouseup', newGrid);
 
@@ -17,6 +19,9 @@ function newGrid() {
     }
     createGrid();
     container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+    //addEvent();
+    const gridCells2 = document.querySelectorAll('.gridCell');
+    addEvent(gridCells2);
 }
 
 function createGrid() {
@@ -29,14 +34,19 @@ function createGrid() {
     };
 }
 
-const gridCells = document.querySelectorAll('.gridCell');
 
 function mouseEvent(e) {
     e.target.style.backgroundColor = 'blue';
 }
 
-gridCells.forEach( (cell) => {
-    cell.addEventListener('mouseover', mouseEvent)
+function addEvent(grid) {
+    grid.forEach( (cell) => {
+    cell.addEventListener('mouseover', (e) => {
+        e.target.style.backgroundColor = 'blue';
+        console.log(e.target);
+    })
 });
+
+}
 
 
