@@ -14,7 +14,7 @@ for (i = 0; i < gridSize; i++) {
 const gridCells = document.querySelectorAll('.gridCell');
 
 function mouseEvent(e) {
-    e.target.style.color = 'blue';
+    e.target.style.backgroundColor = 'blue';
 }
 
 gridCells.forEach( (cell) => {
