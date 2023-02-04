@@ -13,7 +13,6 @@ slider.addEventListener('mouseup', newGrid);
 
 function newGrid() {
     gridSize = slider.value;
-    console.log(gridSize);
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
@@ -34,16 +33,10 @@ function createGrid() {
     };
 }
 
-
-function mouseEvent(e) {
-    e.target.style.backgroundColor = 'blue';
-}
-
 function addEvent(grid) {
     grid.forEach( (cell) => {
     cell.addEventListener('mouseover', (e) => {
-        e.target.style.backgroundColor = 'blue';
-        console.log(e.target);
+        e.target.style.backgroundColor = 'black';
     })
 });
 
