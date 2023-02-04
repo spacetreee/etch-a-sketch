@@ -4,16 +4,20 @@ const divs = document.createElement('div');
 //cursor code
 const slider = document.querySelector('#myRange');
 let gridSize = slider.value;
+container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
 createGrid();
 
-slider.addEventListener('mouseup', function() {
+slider.addEventListener('mouseup', newGrid);
+
+function newGrid() {
     gridSize = slider.value;
     console.log(gridSize);
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
     createGrid();
-});
+    container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+}
 
 function createGrid() {
     for (i = 0; i < gridSize; i++) {
@@ -25,7 +29,6 @@ function createGrid() {
     };
 }
 
-
 const gridCells = document.querySelectorAll('.gridCell');
 
 function mouseEvent(e) {
@@ -34,7 +37,6 @@ function mouseEvent(e) {
 
 gridCells.forEach( (cell) => {
     cell.addEventListener('mouseover', mouseEvent)
-})
+});
 
-container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
 
