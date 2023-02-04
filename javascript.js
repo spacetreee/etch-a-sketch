@@ -18,7 +18,6 @@ function newGrid() {
     }
     createGrid();
     container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
-    //addEvent();
     const gridCells2 = document.querySelectorAll('.gridCell');
     addEvent(gridCells2);
 }
@@ -39,7 +38,14 @@ function addEvent(grid) {
         e.target.style.backgroundColor = 'black';
     })
 });
-
 }
 
-
+const erasebtn = document.querySelector('#erase');
+erasebtn.addEventListener('click', () => {
+    console.log('click');
+    gridCells.forEach( (cell) => {
+        cell.addEventListener('mouseover', (e) => {
+            e.target.style.backgroundColor = 'white';
+        })
+    })
+})
