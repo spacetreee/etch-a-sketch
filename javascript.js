@@ -11,10 +11,12 @@ for (i = 0; i < gridSize; i++) {
     }
 }
 
-const gridCells = document.querySelector('.gridCell');
+const gridCells = document.querySelectorAll('.gridCell');
 
-gridCells.addEventListener('mouseover', func);
-
-function func() {
-    gridCells.style.color = 'blue';
+function mouseEvent(e) {
+    e.target.style.color = 'blue';
 }
+
+gridCells.forEach( (cell) => {
+    cell.addEventListener('mouseover', mouseEvent)
+})
