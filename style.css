@@ -27,3 +27,16 @@ h1 {
     background: rgb(117, 137, 230);
     cursor: pointer;
 }
+
+button {
+    border: none;
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255,255,255);
+}
+
+img {
+    width: 100px;
+    height: auto;
+}
