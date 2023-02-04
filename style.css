@@ -3,7 +3,6 @@ h1 {
 }
 .container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     border-style: solid;
     border-width: 5px;
     padding: 10px;
@@ -13,7 +12,5 @@ h1 {
 
 .container div {
     border-style: solid;
-    border-width: 5px;
-    padding: 20px;
-    aspect-ratio: 1;
+    border-width: 1px;
 }
