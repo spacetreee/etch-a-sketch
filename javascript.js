@@ -1,15 +1,30 @@
 const container = document.querySelector('.container');
 const divs = document.createElement('div');
 
+//cursor code
+const slider = document.querySelector('#myRange');
+let gridSize = slider.value;
+createGrid();
 
-let gridSize = 16;
-for (i = 0; i < gridSize; i++) {
-    for (j = 0; j < gridSize; j++) {
-        const divs = document.createElement('div');
-        divs.classList.add('gridCell');
-        container.appendChild(divs);
+slider.addEventListener('mouseup', function() {
+    gridSize = slider.value;
+    console.log(gridSize);
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
     }
+    createGrid();
+});
+
+function createGrid() {
+    for (i = 0; i < gridSize; i++) {
+        for (j = 0; j < gridSize; j++) {
+            const divs = document.createElement('div');
+            divs.classList.add('gridCell');
+            container.appendChild(divs);
+        }
+    };
 }
+
 
 const gridCells = document.querySelectorAll('.gridCell');
 
@@ -22,3 +37,4 @@ gridCells.forEach( (cell) => {
 })
 
 container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+
