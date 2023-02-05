@@ -10,17 +10,22 @@
 </head>
 <body>
     <h1>Etch a Sketch</h1>
-    <div class="container"></div>
-    <div class="slide-container">
-        <input type="range" min="4" max="100" value="25" class="slider" id="myRange">
+    <div class="content">
+        <div class="container"></div>
+        <div class="slide-container">
+            <div>Drag to resize resolution</div>
+            <input type="range" min="4" max="100" value="25" class="slider" id="myRange">
+        </div>
+        <div>
+            <button id="erase">
+                <img src="./img/eraser.png" alt="erase image">
+            </button>
+            <button id="draw">
+                <img src="./img/pencil.png" alt="pencil image">
+            </button>
+        </div>
     </div>
-    <div>
-        <button id="erase">
-            <img src="./img/eraser.png" alt="erase image">
-        </button>
-        <button id="draw">
-            <img src="./img/pencil.png" alt="pencil image">
-        </button>
-    </div>
+
+    
 </body>
 </html>
