@@ -10,11 +10,6 @@ h1 {
     width: 500px;
 }
 
-.container div {
-    border: solid;
-    border-width: 1px;
-}
-
 .slider {
     -webkit-appearance: none;
     appearance: none;
@@ -38,14 +33,19 @@ button {
     margin: 5px;
     padding: 0;
     background-color: rgb(255,255,255);
-    transition: 0.1s;
+    transition: 0.2s;
 }
 
 button:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
-img {
+#erase img {
     width: 100px;
     height: auto;
+}
+
+#draw img {
+    width: auto;
+    height: 80px;
 }
