@@ -18,8 +18,8 @@ function newGrid() {
     }
     createGrid();
     container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
-    const gridCells2 = document.querySelectorAll('.gridCell');
-    addEvent(gridCells2);
+    const gridCells = document.querySelectorAll('.gridCell');
+    addEvent(gridCells);
 }
 
 function createGrid() {
@@ -41,11 +41,13 @@ function addEvent(grid) {
 }
 
 const erasebtn = document.querySelector('#erase');
-erasebtn.addEventListener('click', () => {
-    console.log('click');
-    gridCells.forEach( (cell) => {
+erasebtn.addEventListener('click', erase);
+
+function erase() {
+    const eraseGridCells = document.querySelectorAll('.gridCell');
+    eraseGridCells.forEach( (cell) => { 
         cell.addEventListener('mouseover', (e) => {
             e.target.style.backgroundColor = 'white';
-        })
-    })
-})
+        });
+    });
+}
