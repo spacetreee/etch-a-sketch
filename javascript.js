@@ -1,13 +1,24 @@
 const container = document.querySelector('.container');
 const divs = document.createElement('div');
 
-//cursor code
 const slider = document.querySelector('#myRange');
 let gridSize = slider.value;
 container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
 createGrid();
-const gridCells = document.querySelectorAll('.gridCell');
-addEvent(gridCells);
+//const gridCells = document.querySelectorAll('.gridCell');
+
+
+const drawbtn = document.querySelector('#draw');
+drawbtn.addEventListener('click', draw);
+
+function draw() {
+    const drawGridCells = document.querySelectorAll('.gridCell');
+    drawGridCells.forEach( (cell) => { 
+        cell.addEventListener('mouseover', (e) => {
+            e.target.style.backgroundColor = 'black';
+        });
+    });
+}
 
 slider.addEventListener('mouseup', newGrid);
 
