@@ -10,6 +10,10 @@ h1 {
     width: 500px;
 }
 
+.container div {
+    border: solid;
+    border-width: 1px;
+}
 
 .slider {
     -webkit-appearance: none;
@@ -31,9 +35,14 @@ h1 {
 button {
     border: none;
     appearance: none;
-    margin: 0;
+    margin: 5px;
     padding: 0;
     background-color: rgb(255,255,255);
+    transition: 0.1s;
+}
+
+button:hover {
+    transform: scale(1.05);
 }
 
 img {
